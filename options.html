@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overlay Remover - Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7v10l10 5 10-5V7l-10-5z"/>
+          <path d="M12 22V12"/>
+          <path d="m2 7 10 5 10-5"/>
+        </svg>
+        Overlay Remover Options
+      </h1>
+    </header>
+
+    <main class="main">
+      <section class="section">
+        <h2>General Settings</h2>
+        <div class="setting-group">
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="enableExtension" class="setting-checkbox">
+              <span class="setting-text">Enable Overlay Remover</span>
+            </label>
+            <p class="setting-description">Automatically detect and remove overlay elements on all websites</p>
+          </div>
+
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="showRestoreButton" class="setting-checkbox">
+              <span class="setting-text">Show Restore Button</span>
+            </label>
+            <p class="setting-description">Display a restore button on pages where overlays are removed</p>
+          </div>
+
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="aggressiveMode" class="setting-checkbox">
+              <span class="setting-text">Aggressive Mode</span>
+            </label>
+            <p class="setting-description">Use more aggressive detection methods (may remove legitimate content)</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Whitelist Management</h2>
+        <div class="whitelist-container">
+          <div class="whitelist-input-group">
+            <input type="text" id="whitelistInput" placeholder="Enter domain (e.g., example.com)" class="whitelist-input">
+            <button id="addWhitelistBtn" class="btn btn-primary">Add</button>
+          </div>
+          <div class="whitelist-list" id="whitelistList">
+            <!-- Whitelist items will be populated here -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Detection Settings</h2>
+        <div class="setting-group">
+          <div class="setting-item">
+            <label class="setting-label">
+              <span class="setting-text">Minimum Z-Index</span>
+              <input type="number" id="minZIndex" class="setting-number" min="0" max="9999" value="900">
+            </label>
+            <p class="setting-description">Minimum z-index value to consider an element as overlay</p>
+          </div>
+
+          <div class="setting-item">
+            <label class="setting-label">
+              <span class="setting-text">Coverage Threshold (%)</span>
+              <input type="number" id="coverageThreshold" class="setting-number" min="0" max="100" value="80">
+            </label>
+            <p class="setting-description">Minimum screen coverage percentage to consider an element as overlay</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Custom Selectors</h2>
+        <div class="selector-container">
+          <div class="selector-input-group">
+            <input type="text" id="selectorInput" placeholder="Enter CSS selector (e.g., .popup-overlay)" class="selector-input">
+            <button id="addSelectorBtn" class="btn btn-primary">Add</button>
+          </div>
+          <div class="selector-list" id="selectorList">
+            <!-- Custom selectors will be populated here -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Statistics</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="totalRemoved">0</div>
+            <div class="stat-label">Total Overlays Removed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="sitesWhitelisted">0</div>
+            <div class="stat-label">Sites Whitelisted</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="activeToday">0</div>
+            <div class="stat-label">Active Today</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-actions">
+        <button id="resetBtn" class="btn btn-secondary">Reset to Defaults</button>
+        <button id="exportBtn" class="btn btn-outline">Export Settings</button>
+        <button id="importBtn" class="btn btn-outline">Import Settings</button>
+        <input type="file" id="importFile" accept=".json" style="display: none;">
+      </div>
+      <div class="footer-info">
+        <p>Overlay Remover v1.0.0</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

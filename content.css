@@ -1,0 +1,183 @@
+/* Styles for overlay remover content script */
+
+/* Hide common overlay elements immediately */
+.modal-backdrop,
+.overlay-backdrop,
+.popup-backdrop,
+.dialog-backdrop {
+  display: none !important;
+}
+
+/* Ensure removed overlays stay hidden */
+[data-overlay-removed="true"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Restore button styles */
+#overlay-remover-restore-btn {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  border: none !important;
+  outline: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+}
+
+#overlay-remover-restore-btn:hover {
+  transform: scale(1.05) !important;
+}
+
+#overlay-remover-restore-btn:active {
+  transform: scale(0.95) !important;
+}
+
+/* Selection mode styles */
+.overlay-remover-selection-mode {
+  cursor: crosshair !important;
+}
+
+.overlay-remover-selection-mode * {
+  cursor: crosshair !important;
+}
+
+/* Selection mode message */
+#overlay-remover-selection-message {
+  position: fixed !important;
+  top: 20px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 999999 !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  padding: 16px 24px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  text-align: center !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  animation: slideInFromTop 0.3s ease-out !important;
+  transition: opacity 0.3s ease !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+.selection-message-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  align-items: center !important;
+}
+
+.selection-message-title {
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  margin-bottom: 4px !important;
+}
+
+.selection-message-text {
+  font-weight: 400 !important;
+  opacity: 0.9 !important;
+}
+
+.selection-message-hint {
+  font-size: 12px !important;
+  opacity: 0.8 !important;
+  margin-top: 4px !important;
+}
+
+.selection-message-hint kbd {
+  background: rgba(255, 255, 255, 0.2) !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  font-family: monospace !important;
+  font-size: 11px !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Success message */
+.overlay-remover-success-message {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 999999 !important;
+  background: #28a745 !important;
+  color: white !important;
+  padding: 12px 20px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(40, 167, 69, 0.4) !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+  animation: successPulse 0.5s ease-out !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+.success-message-content {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* Animations */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0 !important;
+    transform: translateX(-50%) translateY(-20px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateX(-50%) translateY(0) !important;
+  }
+}
+
+@keyframes successPulse {
+  0% {
+    opacity: 0 !important;
+    transform: translate(-50%, -50%) scale(0.8) !important;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05) !important;
+  }
+  100% {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+  }
+}
+
+/* Ensure body scroll is restored */
+body:not(.modal-open) {
+  overflow: auto !important;
+}
+
+/* Remove scroll locks */
+body.no-scroll,
+body.overflow-hidden,
+html.no-scroll,
+html.overflow-hidden {
+  overflow: auto !important;
+}
+
+/* Hover effect for elements in selection mode */
+.overlay-remover-selection-mode *:hover {
+  outline: 2px solid #667eea !important;
+  outline-offset: 2px !important;
+  background-color: rgba(102, 126, 234, 0.1) !important;
+}
+
+/* Prevent hover effects on selection message and restore button */
+#overlay-remover-selection-message:hover,
+#overlay-remover-restore-btn:hover,
+#overlay-remover-selection-message *:hover,
+#overlay-remover-restore-btn *:hover {
+  outline: none !important;
+  background-color: transparent !important;
+}
