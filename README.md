@@ -2,6 +2,18 @@
 
 A powerful browser extension that automatically detects and removes intrusive overlay elements from web pages, including anti-adblock messages, newsletter popups, paywall overlays, and cookie consent notices.
 
+
+## Demo
+
+<video controls width="480" poster="demo-thumbnail.png" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 8px;">
+  <source src="demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<br>
+
+
+
+
 ## Features
 
 ### Automatic Detection & Removal
