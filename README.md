@@ -10,7 +10,7 @@ https://github.com/user-attachments/assets/4562e7bb-997d-4cc9-9aac-e72ece08f7c3
 ## Features
 
 ### Automatic Detection & Removal
-- **Anti-adblock overlays** - Removes "Please disable your adblocker" messages
+- **Anti-adblock overlays** - Removes irritating overlays
 - **Newsletter signup popups** - Eliminates subscription prompts
 - **Paywall overlays** - Bypasses content blocking screens
 - **Cookie consent notices** - Removes GDPR/cookie banners
@@ -144,7 +144,7 @@ git clone https://github.com/nishant9083/overlay_remover.git
 
 ### File Structure
 ```
-overlay-remover/
+overlay_remover/
 ├── manifest.json          # Extension manifest
 ├── background.js          # Background script for context menu and storage
 ├── content.js            # Main content script for overlay detection
