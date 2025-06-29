@@ -20,6 +20,7 @@ https://github.com/user-attachments/assets/4562e7bb-997d-4cc9-9aac-e72ece08f7c3
 ### Manual Control
 - **Toggle functionality** - Enable/disable the extension instantly
 - **Right-click removal** - Manually remove specific overlay elements
+- **Shortcut Key** - Press `Alt+S` and select any element to remove it
 - **Restore capability** - Bring back removed elements if needed
 - **Whitelist support** - Exclude trusted websites from processing
 
@@ -51,8 +52,9 @@ https://github.com/user-attachments/assets/4562e7bb-997d-4cc9-9aac-e72ece08f7c3
 ### Basic Usage
 1. **Automatic Mode**: The extension works automatically on all websites by default
 2. **Toggle**: Click the extension icon to enable/disable functionality
-3. **Manual Removal**: Right-click on any overlay and select "Remove Overlay Element"
-4. **Restore**: Use the floating restore button or popup to bring back removed elements
+3. **`Alt+S`**: Press this key and select an element to remove it
+4. **Manual Removal**: Right-click on any overlay and select "Remove Overlay Element"
+5. **Restore**: Use the floating restore button or popup to bring back removed elements
 
 ### Whitelist Management
 1. Click the extension icon to open the popup
@@ -135,7 +137,7 @@ If you encounter problems:
 ### Building from Source
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/overlay-remover.git
+git clone https://github.com/nishant9083/overlay_remover.git
 
 # No build process required - extension is ready to load
 ```
